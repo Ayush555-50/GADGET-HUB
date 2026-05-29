@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgets Hub - Premium Store with Live Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.reload();">
+                <div class="logo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                Gadgets <span>Hub</span>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search premium tech devices...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" class="nav-item active" data-target="homeSection">Home</a>
+                <a href="#" class="nav-item" data-target="productsSection">Shop</a>
+                <a href="#" class="nav-item" data-target="dealsSection">Deals</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="cart-wrapper" id="cartTrigger">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count" id="cartBadge">0</span>
+                </div>
+                <button class="btn-login" id="loginBtn"><i class="fa-regular fa-user"></i> Login</button>
+                <button class="btn-signup" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebarSection">
+            <h3 class="sidebar-title">Ecosystem Filter</h3>
+            <div class="category-item active" data-cat="all">
+                <i class="fa-solid fa-layer-group"></i> <span>All Categories</span> <i class="fa-solid fa-chevron-right arrow-right"></i>
+            </div>
+            <div class="category-item" data-cat="smartphone"> <i class="fa-solid fa-mobile-screen"></i> <span>Smartphones</span> </div>
+            <div class="category-item" data-cat="laptop"> <i class="fa-solid fa-laptop"></i> <span>Laptops</span> </div>
+            <div class="category-item" data-cat="headphones"> <i class="fa-solid fa-headphones"></i> <span>Headphones</span> </div>
+            <div class="category-item" data-cat="watch"> <i class="fa-solid fa-clock"></i> <span>Smart Watches</span> </div>
+            <div class="category-item" data-cat="tablet"> <i class="fa-solid fa-tablet-button"></i> <span>Tablets</span> </div>
+            <div class="category-item" data-cat="gaming"> <i class="fa-solid fa-gamepad"></i> <span>Gaming</span> </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="hero-banner" id="homeSection">
+                <div class="hero-details">
+                    <span class="badge">Exclusive Tech Offers</span>
+                    <h1>Upgrade Your <br><span class="highlight-text">Tech Life</span></h1>
+                    <p>Experience innovation at its peak. Explore next-gen laptops, premium sound audio setups, and cutting-edge devices designed for you.</p>
+                    <button class="btn-shop" onclick="document.getElementById('productsSection').scrollIntoView({behavior: 'smooth'});">Explore Shop <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80" alt="Premium Tech Display">
+                </div>
+            </section>
+
+            <section class="features-bar">
+                <div class="feature-item"><i class="fa-solid fa-truck"></i><div><h4>Free Shipping</h4><p>On all orders over ₹999</p></div></div>
+                <div class="feature-item"><i class="fa-solid fa-lock"></i><div><h4>Secure Checkout</h4><p>100% encrypted gateway</p></div></div>
+                <div class="feature-item"><i class="fa-solid fa-arrow-rotate-left"></i><div><h4>Easy Returns</h4><p>7 days structural return</p></div></div>
+                <div class="feature-item"><i class="fa-solid fa-headset"></i><div><h4>Expert Support</h4><p>24/7 technical helpdesk</p></div></div>
+            </section>
+
+            <section class="section-header" id="productsSection">
+                <h2 class="section-title"><span></span> Featured Products Workspace</h2>
+                <button class="btn-view-all" onclick="resetFilters();">Show All Products</button>
+            </section>
+
+            <div class="products-grid" id="mainGrid">
+                <div class="product-card" data-id="p1" data-title="iPhone 15 Pro Max" data-type="smartphone" data-price="139900" data-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="iPhone"></div>
+                    <div class="card-meta">
+                        <h3>iPhone 15 Pro Max</h3> <p class="specs">256GB, Natural Titanium Space</p>
+                        <div class="price-rating-row"><span class="price">₹1,39,900</span><span class="rating"><i class="fa-solid fa-star"></i> 4.8</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="p2" data-title="MacBook Air M2" data-type="laptop" data-price="114900" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="MacBook"></div>
+                    <div class="card-meta">
+                        <h3>MacBook Air M2</h3> <p class="specs">13-inch Retina, 8GB/256GB</p>
+                        <div class="price-rating-row"><span class="price">₹1,14,900</span><span class="rating"><i class="fa-solid fa-star"></i> 4.7</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="p3" data-title="Sony WH-1000XM5" data-type="headphones" data-price="29990" data-img="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Sony"></div>
+                    <div class="card-meta">
+                        <h3>Sony WH-1000XM5</h3> <p class="specs">Wireless Hi-Res Noise Cancelling</p>
+                        <div class="price-rating-row"><span class="price">₹29,990</span><span class="rating"><i class="fa-solid fa-star"></i> 4.6</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="p4" data-title="boAt Airdopes 161" data-type="headphones" data-price="1499" data-img="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&q=80" alt="Earbuds"></div>
+                    <div class="card-meta">
+                        <h3>boAt Airdopes 161</h3> <p class="specs">Wireless Earbuds with Type-C</p>
+                        <div class="price-rating-row"><span class="price">₹1,499</span><span class="rating"><i class="fa-solid fa-star"></i> 4.4</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="p5" data-title="Samsung Galaxy Tab S9" data-type="tablet" data-price="69999" data-img="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&w=400&q=80" alt="Samsung"></div>
+                    <div class="card-meta">
+                        <h3>Samsung Galaxy Tab S9</h3> <p class="specs">11-inch AMOLED, 128GB Pro</p>
+                        <div class="price-rating-row"><span class="price">₹69,999</span><span class="rating"><i class="fa-solid fa-star"></i> 4.6</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+                <div class="product-card" data-id="p6" data-title="Apple Watch Series 9" data-type="watch" data-price="41900" data-img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80">
+                    <div class="card-img-holder"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Watch"></div>
+                    <div class="card-meta">
+                        <h3>Apple Watch Series 9</h3> <p class="specs">GPS, Always-On 45mm Display</p>
+                        <div class="price-rating-row"><span class="price">₹41,900</span><span class="rating"><i class="fa-solid fa-star"></i> 4.7</span></div>
+                    </div>
+                    <button class="btn-cart"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                </div>
+            </div>
+
+            <section class="sub-banners-grid" id="dealsSection">
+                <div class="sub-banner banner-purple">
+                    <div class="sub-info">
+                        <span class="offer-tag">Up to 50% Off</span>
+                        <h3>Gaming Accessories</h3>
+                        <button class="btn-sub-shop" onclick="filterFromBanner('gaming')">Shop Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=300&q=80" alt="Gaming Mouse">
+                </div>
+                <div class="sub-banner banner-blue">
+                    <div class="sub-info">
+                        <span class="offer-tag">New Arrivals</span>
+                        <h3>Latest Smartwatches</h3>
+                        <button class="btn-sub-shop" onclick="filterFromBanner('watch')">Shop Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=300&q=80" alt="Smartwatch">
+                </div>
+                <div class="sub-banner banner-dark">
+                    <div class="sub-info">
+                        <span class="offer-tag">Premium Sound</span>
+                        <h3>Headphones Collection</h3>
+                        <button class="btn-sub-shop" onclick="filterFromBanner('headphones')">Shop Now</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=300&q=80" alt="Headphone">
+                </div>
+            </section>
+
+            <section class="stats-counter">
+                <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-users"></i></div><div><h3>10,000+</h3><p>Happy Customers</p></div></div>
+                <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-box-open"></i></div><div><h3>500+</h3><p>Products</p></div></div>
+                <div class="stat-box"><div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h3>50+</h3><p>Top Brands</p></div></div>
+                <div class="stat-box"><div class="stat-icon text-pink"><i class="fa-solid fa-star"></i></div><div><h3>4.8</h3><p>Customer Rating</p></div></div>
+            </section>
+        </main>
+    </div>
+
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-drawer-header">
+                <h2>Your <span>Cart</span></h2>
+                <button class="btn-close-cart" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="cart-items-wrapper" id="cartItemsContainer">
+                <div class="empty-cart-msg">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <p>Your cart workspace is currently empty.</p>
+                </div>
+            </div>
+            
+            <div class="cart-drawer-footer">
+                <div class="summary-row">
+                    <span>Platform Shipping</span>
+                    <span style="color: #10b981;">FREE</span>
+                </div>
+                <div class="summary-row total-bill">
+                    <span>Grand Total:</span>
+                    <span id="cartTotalBill">₹0</span>
+                </div>
+                <button class="btn-checkout" onclick="processCheckout()">
+                    <i class="fa-solid fa-credit-card"></i> Proceed To Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="authModalOverlay">
+        <div class="auth-modal">
+            <button class="close-modal" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="modalTitle">Account Access</h2>
+            <p id="modalDesc">Enter your credentials to manage your account settings.</p>
+            <form id="authForm" onsubmit="event.preventDefault(); alert('Authentication Successful!'); document.getElementById('authModalOverlay').classList.remove('active');">
+                <div class="form-group" id="nameField">
+                    <label>Your Full Name</label>
+                    <input type="text" placeholder="Ex. Alexander Pierce">
+                </div>
+                <div class="form-group">
+                    <label>E-mail ID</label>
+                    <input type="email" placeholder="example@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password Structure</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit-auth" id="modalSubmitBtn">Proceed</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
